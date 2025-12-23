@@ -113,61 +113,12 @@ const Header: React.FC = () => {
             </svg>
           </button>
           <Link
-            href='#'
-            className='hidden lg:block bg-transparent border border-primary text-primary px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white'
-            onClick={() => {
-              setIsSignInOpen(true)
-            }}>
-            Sign In
+            href='/contact'
+            className='hidden lg:inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors'
+          >
+            <Icon icon='solar:letter-bold' className='w-4 h-4' />
+            Let&apos;s Talk
           </Link>
-          {isSignInOpen && (
-            <div
-              ref={signInRef}
-              className='fixed top-0 m-0! left-0 w-full h-full bg-black/50 flex items-center justify-center z-50'>
-              <div className='relative mx-auto w-full max-w-md overflow-hidden rounded-lg bg-white px-8 py-14 text-center dark:bg-darklight'>
-                <button
-                  onClick={() => setIsSignInOpen(false)}
-                  className=' hover:bg-gray-200 dark:hover:bg-gray-800 p-1 rounded-full absolute -top-5 -right-3 mr-8 mt-8'
-                  aria-label='Close Sign In Modal'>
-                  <Icon
-                    icon='ic:round-close'
-                    className='text-2xl dark:text-white'
-                  />
-                </button>
-                <Signin
-                  signInOpen={(value: boolean) => setIsSignInOpen(value)}
-                />
-              </div>
-            </div>
-          )}
-          <Link
-            href='#'
-            className='hidden lg:block bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700'
-            onClick={() => {
-              setIsSignUpOpen(true)
-            }}>
-            Sign Up
-          </Link>
-          {isSignUpOpen && (
-            <div
-              ref={signUpRef}
-              className='fixed top-0 m-0! left-0 w-full h-full bg-black/50 flex items-center justify-center z-50'>
-              <div className='relative mx-auto w-full max-w-md overflow-hidden rounded-lg bg-white px-8 py-14 text-center dark:bg-darklight'>
-                <button
-                  onClick={() => setIsSignUpOpen(false)}
-                  className=' hover:bg-gray-200 dark:hover:bg-gray-800 p-1 rounded-full absolute -top-5 -right-3 mr-8 mt-8'
-                  aria-label='Close Sign In Modal'>
-                  <Icon
-                    icon='ic:round-close'
-                    className='text-2xl dark:text-white'
-                  />
-                </button>
-                <SignUp
-                  signUpOpen={(value: boolean) => setIsSignUpOpen(value)}
-                />
-              </div>
-            </div>
-          )}
           <button
             onClick={() => setNavbarOpen(!navbarOpen)}
             className='block lg:hidden p-2 rounded-lg'
@@ -216,22 +167,11 @@ const Header: React.FC = () => {
           ))}
           <div className='mt-4 flex flex-col gap-4 w-full'>
             <Link
-              href='#'
-              className='bg-transparent border border-primary text-primary px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white'
-              onClick={() => {
-                setIsSignInOpen(true)
-                setNavbarOpen(false)
-              }}>
-              Sign In
-            </Link>
-            <Link
-              href='#'
-              className='bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700'
-              onClick={() => {
-                setIsSignUpOpen(true)
-                setNavbarOpen(false)
-              }}>
-              Sign Up
+              href='/contact'
+              className='bg-primary text-white px-4 py-2 rounded-lg text-center font-semibold hover:bg-blue-700'
+              onClick={() => setNavbarOpen(false)}
+            >
+              Let&apos;s Talk
             </Link>
           </div>
         </nav>
