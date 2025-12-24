@@ -1,8 +1,6 @@
 import React from "react";
 import HeroSub from "@/components/SharedComponent/HeroSub";
 import { Metadata } from "next";
-import Image from "next/image";
-import Counter from "@/components/Home/Counter";
 import { Icon } from '@iconify/react';
 
 export const metadata: Metadata = {
@@ -11,11 +9,6 @@ export const metadata: Metadata = {
 };
 
 const AboutPage = () => {
-  const breadcrumbLinks = [
-    { href: "/", text: "Home" },
-    { href: "/about", text: "About" },
-  ];
-
   const values = [
     {
       title: "Mission",
@@ -50,57 +43,77 @@ const AboutPage = () => {
         description="We are a team of passionate engineers, designers, and problem solvers dedicated to building the next generation of digital products."
       />
 
-      <Counter isColorMode={true} />
-
       {/* Company Story Section */}
       <section className='py-20 bg-white dark:bg-darklight overflow-hidden'>
         <div className='container mx-auto max-w-6xl px-4'>
-          <div className='grid lg:grid-cols-2 gap-16 items-center'>
-            <div className='space-y-8' data-aos="fade-right">
-              <div>
-                <span className='text-sm font-bold tracking-widest uppercase text-primary mb-2 block'>
-                  Who We Are
-                </span>
-                <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-midnight_text dark:text-white leading-tight'>
-                  5+ Years of <span className="text-primary">Excellence</span> in Delivery
-                </h2>
-              </div>
+          <div className='text-center max-w-3xl mx-auto mb-16' data-aos="fade-up">
+            <h2 className='text-3xl md:text-4xl font-bold text-midnight_text dark:text-white'>
+              The Challenge Every <span className='text-primary'>Innovator</span> Faces
+            </h2>
+            <div className='h-1 w-16 bg-primary mx-auto mt-4 rounded-full'></div>
+          </div>
 
-              <div className='space-y-6 text-lg text-grey dark:text-white/70 leading-relaxed'>
-                <p>
-                  We provide a unique value proposition to businesses as a leading software solutions provider.
-                  Our commitment to excellence is backed by a dedicated and skilled full-time team that operates
-                  under your complete supervision, ensuring control over quality, workflow, and productivity.
-                </p>
-                <p>
-                  When you partner with Compatible Solutions, you gain access to the latest technologies, exceptional facilities,
-                  and a pool of highly experienced resources ready to tackle your most complex challenges.
+          <div className='grid lg:grid-cols-2 gap-10 items-start'>
+            <div
+              className='bg-white dark:bg-darkmode rounded-2xl border border-border dark:border-dark_border shadow-lg p-8'
+              data-aos="fade-right"
+            >
+              <h3 className='text-xl font-bold text-midnight_text dark:text-white mb-4'>
+                Picture This Scenario
+              </h3>
+              <p className='text-grey dark:text-white/70 leading-relaxed'>
+                You're a startup founder with a breakthrough idea. Market research validates your concept,
+                requirements are documented, and excitement builds. Then comes the crucial question:
+              </p>
+              <div className='mt-6 bg-primary/10 dark:bg-primary/15 rounded-xl p-5 border border-primary/20'>
+                <p className='text-midnight_text dark:text-white font-semibold'>
+                  "Who can bring this vision to life?"
                 </p>
               </div>
-
-              <ul className='space-y-4'>
-                {[
-                  "24/7 support across projects and time zones",
-                  "Deep expertise in MERN & Next.js technologies",
-                  "Seamless team integration and management",
-                  "Robust risk management and disaster recovery"
-                ].map((item, index) => (
-                  <li key={index} className='flex items-center gap-3 text-midnight_text dark:text-white font-medium'>
-                    <Icon icon="solar:check-circle-bold" className="text-primary w-6 h-6 flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
             </div>
 
-            <div className='relative' data-aos="fade-left">
-              <Image
-                src="/images/blog/blog_7.jpg"
-                alt="Our Engineering Culture"
-                width={500}
-                height={500}
-                className='w-full h-auto object-cover'
-              />
+            <div className='space-y-6' data-aos="fade-left">
+              <div className='bg-white dark:bg-darkmode rounded-2xl border border-border dark:border-dark_border shadow-lg p-6'>
+                <div className='flex gap-4'>
+                  <div className='w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center shrink-0'>
+                    <Icon icon="solar:close-circle-bold" className='text-red-500' width="22" height="22" />
+                  </div>
+                  <div>
+                    <h4 className='font-bold text-midnight_text dark:text-white'>The False Promise Trap</h4>
+                    <p className='text-sm text-grey dark:text-white/70 mt-1'>
+                      Developers who oversell and underdeliver, leaving projects incomplete
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className='bg-white dark:bg-darkmode rounded-2xl border border-border dark:border-dark_border shadow-lg p-6'>
+                <div className='flex gap-4'>
+                  <div className='w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center shrink-0'>
+                    <Icon icon="solar:danger-triangle-bold" className='text-amber-500' width="22" height="22" />
+                  </div>
+                  <div>
+                    <h4 className='font-bold text-midnight_text dark:text-white'>The Overcommitted Expert</h4>
+                    <p className='text-sm text-grey dark:text-white/70 mt-1'>
+                      Skilled developers too busy to give your project the attention it deserves
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className='bg-emerald-50 dark:bg-emerald-900/20 rounded-2xl border border-emerald-200/60 dark:border-emerald-900/40 shadow-lg p-6'>
+                <div className='flex gap-4'>
+                  <div className='w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center shrink-0'>
+                    <Icon icon="solar:check-circle-bold" className='text-emerald-600' width="22" height="22" />
+                  </div>
+                  <div>
+                    <h4 className='font-bold text-midnight_text dark:text-white'>The Perfect Partnership</h4>
+                    <p className='text-sm text-grey dark:text-white/70 mt-1'>
+                      Dedicated professionals who are excited about your vision
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
